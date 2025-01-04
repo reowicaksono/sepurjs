@@ -1,9 +1,8 @@
 import express from "express";
+import { getAllUsers } from "../controller/UserController.js";
 
 const appRouter = express.Router();
 
-appRouter.get("/", (req, res) => {
-    res.send("Hello World");
-})
+appRouter.get("/user",getAllUsers);
 
 export default appRouter;
