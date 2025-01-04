@@ -18,7 +18,7 @@ export const createUser = async (req,res) => {
     const passwordHash = await bycript.hash(password, encrypt);
      try {
        const user = await User.create({name: name, email: email, password: passwordHash});
-       res.json(user, {message: `User Created ${name}`});
+       res.json({message: `User Created ${name}`});
 
     }catch (error) {
         res.json({ message: error });
